@@ -1,0 +1,29 @@
+using System;
+using System.Collections.Generic;
+
+class Program
+{
+    static void Main()
+    {
+        Queue<string> customers = new Queue<string>();
+
+        
+        customers.Enqueue("Alice");
+        customers.Enqueue("Bob");
+        customers.Enqueue("Charlie");
+        customers.Enqueue("Diana");
+        customers.Enqueue("Edward");
+
+        
+        Console.WriteLine("Serving: " + customers.Dequeue());
+
+        
+        Console.WriteLine("Serving: " + customers.Dequeue());
+
+        
+        customers.Enqueue("Frank");
+
+        
+        Console.WriteLine("Next customer to be served: " + customers.Peek());
+    }
+}
