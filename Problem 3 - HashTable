@@ -1,0 +1,36 @@
+using System;
+using System.Collections;
+
+class Program
+{
+    static void Main()
+    {
+        Hashtable students = new Hashtable();
+
+       
+        students.Add(101, "Alice");
+        students.Add(102, "Bob");
+        students.Add(103, "Charlie");
+        students.Add(104, "Diana");
+        students.Add(105, "Edward");
+
+       
+        Console.WriteLine("Student 103: " + students[103]);
+
+       
+        Console.WriteLine("Does student 105 exist? " + students.ContainsKey(105));
+
+        
+        students[102] = "Robert";
+
+        
+        students.Remove(104);
+
+        
+        Console.WriteLine("\nRemaining students:");
+        foreach (DictionaryEntry entry in students)
+        {
+            Console.WriteLine($"{entry.Key} - {entry.Value}");
+        }
+    }
+}
