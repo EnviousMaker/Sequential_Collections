@@ -1,0 +1,26 @@
+using System;
+using System.Collections.Generic;
+
+class Program
+{
+    static void Main()
+    {
+        Stack<string> backHistory = new Stack<string>();
+
+       
+        backHistory.Push("Google");
+        backHistory.Push("YouTube");
+        backHistory.Push("Facebook");
+        backHistory.Push("GitHub");
+
+        
+        Console.WriteLine("Current page: " + backHistory.Peek());
+
+        
+        backHistory.Pop(); // first Back
+        backHistory.Pop(); // second Back
+
+        
+        Console.WriteLine("Page currently visible after 2 Back presses: " + backHistory.Peek());
+    }
+}
