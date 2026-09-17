@@ -1,0 +1,47 @@
+using System;
+using System.Collections.Generic;
+
+class Program
+{
+    static void Main()
+    {
+        Dictionary<string, int> inventory = new Dictionary<string, int>();
+
+        
+        inventory.Add("Laptop", 10);
+        inventory.Add("Mouse", 25);
+        inventory.Add("Keyboard", 15);
+        inventory.Add("Monitor", 8);
+        inventory.Add("Printer", 5);
+
+       
+        Console.WriteLine("Laptop quantity: " + inventory["Laptop"]);
+
+        
+        inventory["Mouse"] = 30;
+
+        
+        inventory.Add("Headset", 20);
+
+       
+        Console.WriteLine("Does Printer exist? " + inventory.ContainsKey("Printer"));
+
+       
+        inventory.Remove("Monitor");
+
+       
+        Console.WriteLine("\nCurrent inventory:");
+        foreach (var item in inventory)
+        {
+            Console.WriteLine($"{item.Key}: {item.Value}");
+        }
+
+        
+        int total = 0;
+        foreach (var qty in inventory.Values)
+        {
+            total += qty;
+        }
+        Console.WriteLine("\nTotal inventory quantity: " + total);
+    }
+}
